@@ -1,0 +1,24 @@
+#overrided-bootstrap p {
+  margin: 0;
+}
+#overrided-bootstrap td {
+  vertical-align: middle;
+  text-align: center;
+}
+#overrided-bootstrap th {
+  text-align: center;
+  background-color: #167F92;
+  color: #fff;
+}
+#overrided-bootstrap .form-control {
+  max-width: 150px;
+  width: 100%;
+  display: inline-block;
+}
+.countresult {
+  text-align: center;
+}
+.leave {
+  transition: all 1s;
+  opacity: 0;
+}

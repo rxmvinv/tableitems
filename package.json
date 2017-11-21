@@ -1,0 +1,17 @@
+{
+  "name": "vuetable",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "ejs": "*",
+    "express": "*",
+    "jade":  "*",
+    "morgan": "*",
+    "serve-favicon": "*"
+  }
+}
