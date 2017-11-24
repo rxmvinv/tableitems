@@ -9,7 +9,6 @@
 		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="/js/vue.js"></script>
 		<script type="text/javascript" src="/js/currency-validator.js"></script>
-		<script type="text/javascript" src="/js/tween.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -17,19 +16,26 @@
 		        <div id="app" class="table-responsive col-md-8 col-md-offset-2">
 			        <table class="grid table table-bordered table-sortable table-striped" id="overrided-bootstrap">
 			            <thead>
-			                <tr><th>Name</th><th>Quantity</th><th>Price</th><th>Remove</th></tr>
+			                <tr><th>Name</th><th>Quantity</th><th>Price</th><th>Edit</th><th>Remove</th></tr>
 			            </thead>
 			            <tbody>
 											<tr class="loaded-by-vue" is="tablerow-item"
 												v-for="item,index in itemList"
 												v-bind:tablerow="item"
 												v-bind:key="item.id"
+
 												v-model="item.value"
+												v-on:inputname="editName($event, item)"
+												v-on:inputprice="editPrice($event, item)"
+
 												v-on:remove="removeItem(item)"
-												v-bind:class="{'leave': item.leave}">
+												v-on:edit="editItem(item)">
+											</tr>
+											<tr class="loaded-by-vue" is="add-item"
+												v-on:addnew="addItem($event)">
 											</tr>
 											<tr>
-													<td colspan="4" class="countresult"><p>Total: ${{ total }}</p></td>
+													<td colspan="5" class="countresult"><p>Total: ${{ total }}</p></td>
 											</tr>
 			            </tbody>
 			        </table>

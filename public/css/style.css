@@ -18,7 +18,63 @@
 .countresult {
   text-align: center;
 }
-.leave {
-  transition: all 1s;
-  opacity: 0;
+
+.slide-fade-enter-active, .item-transit-enter-active {
+  animation: fade-in .3s;
+}
+.slide-fade-leave-active, .item-transit-leave-active {
+  animation: fade-out .3s;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+-webkit-@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+-webkit-@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
