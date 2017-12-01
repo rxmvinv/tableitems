@@ -5,26 +5,20 @@ Vue.component('tablerow-item', {
   template: '<transition name="item-transit">\
               <tr>\
               <td>\
-                  <transition name="slide-fade">\
+                  <transition name="slide-fade" mode="out-in">\
                     <p v-if="!tablerow.editable">{{tablerow.name}}</p>\
-                  </transition>\
-                  <transition name="slide-fade">\
                     <input ref="inputname" v-if="tablerow.editable" v-bind:value="tablerow.name" v-on:input="updateName($event.target.value)" v-on:focus="selectAll" v-on:blur="formatName" class="form-control">\
                   </transition>\
               </td>\
               <td>\
-                  <transition name="slide-fade">\
+                  <transition name="slide-fade" mode="out-in">\
                     <p v-if="!tablerow.editable">{{tablerow.value}}</p>\
-                  </transition>\
-                  <transition name="slide-fade">\
                     <input ref="input" v-if="tablerow.editable" v-bind:value="tablerow.value" v-on:input="updateValue($event.target.value)" v-on:focus="selectAll" v-on:blur="formatValue" class="form-control">\
                   </transition>\
               </td>\
               <td>\
-                  <transition name="slide-fade">\
+                  <transition name="slide-fade" mode="out-in">\
                     <p v-if="!tablerow.editable">${{ tablerow.price }}</p>\
-                  </transition>\
-                  <transition name="slide-fade">\
                     <input ref="inputprice" v-if="tablerow.editable" v-bind:value="tablerow.price" v-on:input="updatePrice($event.target.value)" v-on:focus="selectAll" v-on:blur="formatPrice" class="form-control">\
                   </transition>\
               </td>\
@@ -105,6 +99,7 @@ Vue.component('add-item', {
                 <input ref="newPrice" v-on:input="addPrice($event.target.value)" v-on:blur="addPrice($event.target.value)" class="form-control">\
               </td>\
               <td><button v-on:click="addNewItem()" class="btn btn-success glyphicon glyphicon-plus"></button></td>\
+              <td></td>\
              </tr>',
 
   methods: {
